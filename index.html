@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hema ❤️ My Love</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family: 'Poppins', sans-serif;}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(-45deg,#ff4e8c,#ff99ac,#ff2e63,#ff758c);
+background-size:400% 400%;
+animation:gradient 10s ease infinite;
+overflow:hidden;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:25px;
+text-align:center;
+color:white;
+width:90%;
+max-width:350px;
+box-shadow:0 15px 40px rgba(0,0,0,0.3);
+animation:fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(-20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+font-size:22px;
+margin-bottom:10px;
+}
+
+p{
+font-size:14px;
+margin:10px 0;
+}
+
+button{
+margin-top:10px;
+padding:10px 18px;
+border:none;
+border-radius:20px;
+background:white;
+color:#ff2e63;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#loveLetter{
+display:none;
+margin-top:15px;
+font-size:13px;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh); opacity:0;}
+100%{transform:translateY(-10vh); opacity:1;}
+}
+
+.counter{
+margin-top:10px;
+font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Happy Valentine’s Day ❤️</h1>
+<p>You are my today and all of my tomorrows 💕</p>
+
+<div class="counter" id="counter"></div>
+
+<button onclick="showLetter()">Open Love Letter 💌</button>
+<button onclick="proposal()">Will You Be Mine? 💍</button>
+
+<div id="loveLetter">
+You are the most beautiful chapter of my life.  
+Every moment with you feels magical ✨  
+Forever & Always ❤️
+</div>
+
+</div>
+
+<script>
+
+// Love Counter (Change date below)
+let startDate = new Date("2024-01-01"); // change this date
+let today = new Date();
+let diff = today - startDate;
+let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+document.getElementById("counter").innerHTML = 
+"We have been together for " + days + " days 💖";
+
+// Show Love Letter
+function showLetter(){
+document.getElementById("loveLetter").style.display="block";
+}
+
+// Proposal
+function proposal(){
+alert("Forever & Always 💍❤️");
+}
+
+// Floating Hearts
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},6000);
+}
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
 
